@@ -83,6 +83,9 @@ jobs:
         if: (github.repository == env.MainRepo)
         run: pipenv run pyrevit check
 
+      - name: Validate Bundle YAML Files
+        run: python dev/validate_bundles.py
+
       - name: Update Copyright Info
         if: (github.repository == env.MainRepo)
         run: |
